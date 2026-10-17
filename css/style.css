@@ -1,0 +1,132 @@
+/* BeeSound – brand layer on top of Bootstrap 5.3 */
+:root {
+  --pink: #AF367B;
+  --pink-dark: #8F2B64;
+  --navy: #1B234A;
+  --soft: #F2F5FF;
+  --ink: #222121;
+  --bs-body-font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --bs-primary: #AF367B;
+  --bs-primary-rgb: 175, 54, 123;
+  --bs-link-color: #AF367B;
+  --bs-link-color-rgb: 175, 54, 123;
+  --bs-link-hover-color: #8F2B64;
+  --bs-link-hover-color-rgb: 143, 43, 100;
+  --bs-border-radius: .5rem;
+  --bs-border-radius-lg: .75rem;
+}
+
+/* Bootstrap component recolouring */
+.btn-primary {
+  --bs-btn-bg: var(--pink); --bs-btn-border-color: var(--pink);
+  --bs-btn-hover-bg: var(--pink-dark); --bs-btn-hover-border-color: var(--pink-dark);
+  --bs-btn-active-bg: #7a2455; --bs-btn-active-border-color: #7a2455;
+  --bs-btn-disabled-bg: var(--pink); --bs-btn-disabled-border-color: var(--pink);
+  --bs-btn-focus-shadow-rgb: 175, 54, 123;
+}
+.btn-outline-primary {
+  --bs-btn-color: var(--pink); --bs-btn-border-color: var(--pink);
+  --bs-btn-hover-bg: var(--pink); --bs-btn-hover-border-color: var(--pink);
+  --bs-btn-active-bg: var(--pink-dark); --bs-btn-active-border-color: var(--pink-dark);
+  --bs-btn-focus-shadow-rgb: 175, 54, 123;
+}
+.btn-outline-navy {
+  --bs-btn-color: var(--navy); --bs-btn-border-color: var(--navy);
+  --bs-btn-hover-bg: var(--navy); --bs-btn-hover-border-color: var(--navy); --bs-btn-hover-color: #fff;
+  --bs-btn-active-bg: var(--navy); --bs-btn-active-border-color: var(--navy); --bs-btn-active-color: #fff;
+  --bs-btn-focus-shadow-rgb: 27, 35, 74;
+}
+.btn-navy {
+  --bs-btn-bg: var(--navy); --bs-btn-border-color: var(--navy); --bs-btn-color: #fff;
+  --bs-btn-hover-bg: #12183a; --bs-btn-hover-border-color: #12183a; --bs-btn-hover-color: #fff;
+}
+.nav-pills { --bs-nav-pills-link-active-bg: var(--navy); }
+.form-control:focus, .form-select:focus {
+  border-color: var(--pink); box-shadow: 0 0 0 .25rem rgba(175, 54, 123, .2);
+}
+.text-navy { color: var(--navy) !important; }
+.bg-soft { background: var(--soft) !important; }
+
+/* header */
+.site-header { box-shadow: 0 1px 0 rgba(0, 0, 0, .06); }
+.navbar-brand img { width: 22px; height: 22px; }
+.navbar .nav-link { font-size: .875rem; color: #000; }
+.navbar .nav-link:hover { color: var(--pink); }
+.navbar .nav-link.active { color: var(--navy); text-decoration: underline; text-underline-offset: 6px; }
+.icon-img { width: 22px; height: 22px; }
+.cart-link { position: relative; display: inline-flex; padding: .25rem; }
+.cart-count {
+  position: absolute; top: -6px; right: -8px; min-width: 18px; height: 18px; padding: 0 5px;
+  border-radius: 9px; background: var(--pink); color: #fff; font-size: 11px; line-height: 18px; text-align: center;
+}
+.cart-count:empty { display: none; }
+
+/* hero + promos */
+.hero {
+  background: radial-gradient(circle at 80% 40%, #C3689C, var(--pink) 60%);
+  color: #fff; min-height: 340px; border-radius: 0 0 160px 0;
+}
+.hero h1 { font-size: clamp(1.9rem, 4vw, 2.5rem); font-weight: 500; line-height: 1.2; }
+.hero img { width: min(300px, 70%); }
+.promo { color: #fff; min-height: 220px; border-radius: 50px 0 50px 0; }
+.promo img { width: 190px; max-width: 40%; }
+.promo-pink { background: var(--pink); }
+.promo-navy { background: var(--navy); }
+@media (max-width: 991.98px) { .hero { border-radius: 0 0 80px 0; } }
+
+/* product cards */
+.thumb {
+  position: relative; background: var(--soft); aspect-ratio: 1 / 1.18;
+  display: flex; align-items: center; justify-content: center; padding: 1.25rem;
+}
+.thumb img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.product-card { border-radius: .25rem; }
+.product-card:hover h3, .product-card:focus-visible h3 { color: var(--pink); }
+.product-card:focus-visible { outline: 3px solid var(--pink); outline-offset: 4px; }
+.dots { display: flex; gap: .5rem; margin-bottom: .75rem; }
+.dots span { width: 20px; height: 20px; border-radius: 50%; border: 1px solid rgba(0, 0, 0, .15); }
+.dots.dots-lg span { width: 26px; height: 26px; }
+.sale-badge {
+  position: absolute; top: 10px; left: 10px; background: #D62828; color: #fff; font-size: .8rem;
+  min-width: 42px; height: 42px; padding: 0 .35rem; display: grid; place-items: center; border-radius: 50%;
+}
+
+/* black friday */
+.black-friday { background: var(--ink); color: #fff; }
+.timer { background: #fff; color: var(--ink); border-radius: .25rem; padding: .5rem 1.25rem; }
+.timer small { display: block; font-size: .8rem; }
+.timer b { font-size: 1.6rem; font-weight: 400; font-variant-numeric: tabular-nums; }
+
+/* footer */
+.footer { background: var(--soft); }
+.footer a:not(.btn) { color: inherit; }
+.footer a:not(.btn):hover { color: var(--pink); }
+.socials a {
+  width: 38px; height: 38px; border-radius: 50%; background: #E3E6F5;
+  display: grid; place-items: center;
+}
+.socials a:hover { background: var(--pink); color: #fff !important; }
+
+/* product modal */
+.pm-main { background: var(--soft); height: min(52vh, 400px); display: flex; align-items: center; justify-content: center; padding: 1.25rem; }
+.pm-main img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.pm-thumb {
+  background: var(--soft); border: 2px solid transparent; border-radius: .25rem;
+  width: 84px; height: 84px; padding: 6px; display: flex; align-items: center; justify-content: center;
+}
+.pm-thumb[aria-pressed="true"] { border-color: var(--pink); }
+.pm-thumb img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.pm-specs dt { font-weight: 400; color: #5b6168; }
+.pm-specs dd { margin-bottom: .6rem; }
+.mini .thumb { aspect-ratio: 1 / 1.1; padding: .5rem; }
+
+/* cart + checkout */
+.page-narrow { max-width: 1000px; }
+.cart-pic { width: 100%; max-width: 220px; aspect-ratio: 1 / 1.1; background: var(--soft); border-radius: .25rem; padding: 1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.cart-pic img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.qty { width: 130px; }
+.qty .form-control { padding-left: 0; padding-right: 0; }
+.summary { position: sticky; top: 100px; }
+.form-floating > .form-control { border-radius: .75rem; background: #F1F1F1; border-color: transparent; }
+.form-floating > .form-control:focus { background: #fff; }
+.form-floating > .form-control.is-invalid, .form-floating > .form-control.is-valid { background-color: #fff; }
